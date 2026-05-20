@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuenSabor - Restaurante de Cocina Casera</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- HEADER Y NAVEGACION -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-section">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%238B4513'/%3E%3Cpath d='M50 20 L70 50 L50 80 L30 50 Z' fill='%23D2691E'/%3E%3Ccircle cx='50' cy='50' r='15' fill='%23FFFFFF'/%3E%3C/svg%3E" alt="Logo BuenSabor" class="logo">
+                <div class="logo-text">
+                    <h1>BuenSabor</h1>
+                    <p class="tagline">Cocina Casera Auténtica</p>
+                </div>
+            </div>
+            
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#menu">Menú</a></li>
+                    <li><a href="#catering">Catering</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#solicitar-carta" class="btn-cart">Solicitar Carta</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SECCION HERO -->
+    <section class="hero" id="inicio">
+        <div class="hero-background">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 600'%3E%3Crect fill='%23F5DEB3' width='1200' height='600'/%3E%3Cpath d='M0 400 Q300 350 600 400 T1200 400 L1200 600 L0 600 Z' fill='%23D2B48C'/%3E%3C/svg%3E" alt="Ambiente del Restaurante" class="bg-image">
+        </div>
+        
+        <div class="hero-content">
+            <div class="dish-container">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Ccircle cx='200' cy='150' r='120' fill='%23FFF8DC'/%3E%3Cpath d='M100 180 L120 150 L140 180 L160 160 L180 180 L200 160 L220 180 L240 160 L260 180 L280 150 L300 180' fill='%238B4513' stroke='%23654321' stroke-width='2'/%3E%3Cellipse cx='200' cy='130' rx='80' ry='60' fill='%23DAA520'/%3E%3C/svg%3E" alt="Carne a lo Pobre con Puré" class="dish-image">
+                <h2 class="dish-name">Carne a lo Pobre con Puré</h2>
+                <p class="slogan">De la cocina a su mesa</p>
+            </div>
+            
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToMenu()">Ver Menú</button>
+                <button class="btn btn-secondary" onclick="scrollToReservation()">Solicitar Reserva o Catering</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION MENU -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <h2 class="section-title">Nuestro Menú</h2>
+            
+            <!-- ENTRADAS -->
+            <div class="menu-category">
+                <h3 class="category-title">Entradas</h3>
+                <div class="dishes-grid">
+                    <div class="dish-card">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect fill='%23FFF8DC' width='300' height='200'/%3E%3Ccircle cx='150' cy='100' r='80' fill='%23FFE4B5'/%3E%3Cpath d='M100 100 L150 120 L200 100 M120 110 L150 130 L180 110' stroke='%238B4513' stroke-width='2' fill='none'/%3E%3C/svg%3E" alt="Consomé de Pollo" class="dish-img">
+                        <h4 class="dish-title">Consomé de Pollo</h4>
+                        <p class="dish-description">Caldo casero con pollo tierno, verduras frescas y noodles, receta tradicional.</p>
+                        <p class="dish-price">$4.500</p>
+                    </div>
+
+                    <div class="dish-card">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect fill='%23FFF8DC' width='300' height='200'/%3E%3Cpath d='M80 80 L220 80 L200 140 L100 140 Z' fill='%2390EE90'/%3E%3Ccircle cx='150' cy='90' r='15' fill='%23FF6347'/%3E%3Ccircle cx='130' cy='110' r='12' fill='%23FFD700'/%3E%3Ccircle cx='170' cy='110' r='12' fill='%23FFD700'/%3E%3C/svg%3E" alt="Ensalada Fresca" class="dish-img">
+                        <h4 class="dish-title">Ensalada Fresca</h4>
+                        <p class="dish-description">Lechuga, tomate, cebolla, zanahoria y aliño casero a base de aceite y limón.</p>
+                        <p class="dish-price">$3.800</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PLATOS PRINCIPALES -->
+            <div class="menu-category">
+                <h3 class="category-title">Platos Principales</h3>
+                <div class="dishes-grid">
+                    <div class="dish-card">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect fill='%23FFF8DC' width='300' height='200'/%3E%3Cellipse cx='150' cy='100' rx='90' ry='70' fill='%23DAA520'/%3E%3Cpath d='M120 80 L180 80 L170 120 L130 120 Z' fill='%238B4513'/%3E%3Ccircle cx='150' cy='60' r='20' fill='%23D2B48C'/%3E%3C/svg%3E" alt="Porotos Guisados" class="dish-img">
+                        <h4 class="dish-title">Porotos Guisados</h4>
+                        <p class="dish-description">Porotos cocidos al sazón con tocino, cebolla, ajo y especias tradicionales.</p>
+                        <p class="dish-price">$5.200</p>
+                    </div>
+
+                    <div class="dish-card">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect fill='%23FFF8DC' width='300' height='200'/%3E%3Ccircle cx='150' cy='100' r='85' fill='%23FFE4B5'/%3E%3Cpath d='M100 90 L150 110 L200 90 M110 110 L150 130 L190 110' stroke='%238B4513' stroke-width='2.5' fill='none'/%3E%3Cpath d='M120 100 Q150 95 180 100' stroke='%23DAA520' stroke-width='2' fill='none'/%3E%3C/svg%3E" alt="Sopa de Vacuno" class="dish-img">
+                        <h4 class="dish-title">Sopa de Vacuno</h4>
+                        <p class="dish-description">Caldo tradicional con carne de vacuno, papas, zanahorias y fideos caseros.</p>
+                        <p class="dish-price">$6.500</p>
+                    </div>
+
+                    <div class="dish-card">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect fill='%23FFF8DC' width='300' height='200'/%3E%3Ccircle cx='150' cy='100' r='85' fill='%23FFE4B5'/%3E%3Cpath d='M80 100 Q150 85 220 100 L200 130 Q150 120 100 130 Z' fill='%23F4A460'/%3E%3Ccircle cx='120' cy='90' r='8' fill='%2390EE90'/%3E%3Ccircle cx='180' cy='90' r='8' fill='%2390EE90'/%3E%3C/svg%3E" alt="Sopa de Pollo" class="dish-img">
+                        <h4 class="dish-title">Sopa de Pollo</h4>
+                        <p class="dish-description">Sopa casera con pollo tierno, verduras frescas y un toque de cilantro.</p>
+                        <p class="dish-price">$6.200</p>
+                    </div>
+
+                    <div class="dish-card">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect fill='%23FFF8DC' width='300' height='200'/%3E%3Cpath d='M80 100 L220 100 L200 140 L100 140 Z' fill='%23D2691E'/%3E%3Cpath d='M90 95 Q150 75 210 95' stroke='%23FFD700' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='130' cy='110' r='6' fill='%23FFD700'/%3E%3Ccircle cx='170' cy='110' r='6' fill='%23FFD700'/%3E%3C/svg%3E" alt="Fideos con Salsa" class="dish-img">
+                        <h4 class="dish-title">Fideos con Salsa Casera</h4>
+                        <p class="dish-description">Fideos frescos con salsa de tomate casera, carne molida y queso derretido.</p>
+                        <p class="dish-price">$5.800</p>
+                    </div>
+
+                    <div class="dish-card">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect fill='%23FFF8DC' width='300' height='200'/%3E%3Cellipse cx='150' cy='100' rx='85' ry='70' fill='%23D2B48C'/%3E%3Cpath d='M110 85 L190 85 L170 125 L130 125 Z' fill='%238B4513'/%3E%3Cpath d='M120 110 L180 110' stroke='%23DAA520' stroke-width='1.5' fill='none'/%3E%3C/svg%3E" alt="Carne a la Olla con Puré" class="dish-img">
+                        <h4 class="dish-title">Carne a la Olla con Puré</h4>
+                        <p class="dish-description">Carne de vacuno tierna guisada con verduras y papas, acompañada de puré cremoso.</p>
+                        <p class="dish-price">$8.500</p>
+                    </div>
+
+                    <div class="dish-card">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect fill='%23FFF8DC' width='300' height='200'/%3E%3Cellipse cx='150' cy='100' rx='85' ry='70' fill='%23FFE4B5'/%3E%3Cpath d='M110 80 L190 80 L170 130 L130 130 Z' fill='%238B4513'/%3E%3Ccircle cx='150' cy='100' r='25' fill='%23FFD700'/%3E%3C/svg%3E" alt="Carne con Arroz" class="dish-img">
+                        <h4 class="dish-title">Carne con Arroz Blanco</h4>
+                        <p class="dish-description">Filete de carne a la parilla acompañado con arroz blanco esponjoso y limón.</p>
+                        <p class="dish-price">$9.200</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- POSTRES -->
+            <div class="menu-category">
+                <h3 class="category-title">Postres</h3>
+                <div class="dishes-grid">
+                    <div class="dish-card">
+                        <div class="vegan-badge">Sin Lactosa - Vegano</div>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect fill='%23FFE4E1' width='300' height='200'/%3E%3Ccircle cx='100' cy='80' r='35' fill='%23FF69B4'/%3E%3Ccircle cx='150' cy='60' r='35' fill='%239370DB'/%3E%3Ccircle cx='200' cy='80' r='35' fill='%234169E1'/%3E%3Crect x='80' y='120' width='140' height='40' fill='%23D2B48C' rx='5'/%3E%3C/svg%3E" alt="Helados" class="dish-img">
+                        <h4 class="dish-title">Helados Caseros</h4>
+                        <p class="dish-description">Helados artesanales en diversos sabores. Opción sin lactosa disponible, menú vegano.</p>
+                        <p class="dish-price">$4.200</p>
+                    </div>
+
+                    <div class="dish-card">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect fill='%23FFF8DC' width='300' height='200'/%3E%3Ccircle cx='150' cy='90' r='70' fill='%23FFE4B5'/%3E%3Cpath d='M100 90 L200 90 M150 50 L150 130' stroke='%238B4513' stroke-width='2' fill='none'/%3E%3Ccircle cx='110' cy='110' r='8' fill='%238B0000'/%3E%3Ccircle cx='190' cy='110' r='8' fill='%238B0000'/%3E%3Ccircle cx='150' cy='60' r='8' fill='%238B0000'/%3E%3C/svg%3E" alt="Mote con Huesillo" class="dish-img">
+                        <h4 class="dish-title">Mote con Huesillo</h4>
+                        <p class="dish-description">Bebida tradicional chilena con mote, huesillo y azúcar. Refrescante y auténtica.</p>
+                        <p class="dish-price">$3.500</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION CATERING -->
+    <section class="catering-section" id="catering">
+        <div class="container">
+            <h2 class="section-title">Servicio de Catering</h2>
+            
+            <div class="catering-intro">
+                <p class="catering-text">
+                    <strong>Restaurant BuenSabor</strong> ofrece servicio de catering para <strong>casamientos, fiestas de 15 años, cumpleaños, eventos corporativos</strong> y más.
+                </p>
+                <div class="catering-contact">
+                    <p><i class="fas fa-phone"></i> <strong>+569 87654321</strong></p>
+                    <p><i class="fas fa-envelope"></i> <strong>RBuenSabor@gmail.com</strong></p>
+                </div>
+            </div>
+
+            <div class="catering-grid">
+                <!-- SALON PRINCIPAL -->
+                <div class="catering-card">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23F5DEB3' width='400' height='300'/%3E%3Crect x='30' y='40' width='340' height='220' fill='%23DEB887' stroke='%238B4513' stroke-width='2'/%3E%3Ccircle cx='150' cy='120' r='30' fill='%23FFE4B5'/%3E%3Ccircle cx='200' cy='120' r='30' fill='%23FFE4B5'/%3E%3Ccircle cx='250' cy='120' r='30' fill='%23FFE4B5'/%3E%3Ccircle cx='150' cy='180' r='30' fill='%23FFE4B5'/%3E%3Ccircle cx='200' cy='180' r='30' fill='%23FFE4B5'/%3E%3Ccircle cx='250' cy='180' r='30' fill='%23FFE4B5'/%3E%3C/svg%3E" alt="Salón Principal" class="catering-img">
+                    <h4>Salón Principal</h4>
+                    <p>Nuestro salón principal cuenta con una decoración cálida y acogedora, perfecta para eventos especiales.</p>
+                    <p class="capacity"><strong>Capacidad:</strong> Hasta 120 comensales</p>
+                </div>
+
+                <!-- PATIO INTERIOR -->
+                <div class="catering-card">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%2390EE90' width='400' height='300'/%3E%3Crect x='40' y='50' width='320' height='200' fill='%23FFFFFF' stroke='%238B4513' stroke-width='2'/%3E%3Ccircle cx='100' cy='100' r='25' fill='%23228B22'/%3E%3Ccircle cx='300' cy='100' r='25' fill='%23228B22'/%3E%3Ccircle cx='100' cy='200' r='25' fill='%23228B22'/%3E%3Ccircle cx='300' cy='200' r='25' fill='%23228B22'/%3E%3C/svg%3E" alt="Patio Interior" class="catering-img">
+                    <h4>Patio Interior</h4>
+                    <p>Espacio al aire libre rodeado de vegetación natural, ideal para eventos en días soleados.</p>
+                    <p class="capacity"><strong>Capacidad:</strong> Hasta 80 comensales</p>
+                </div>
+
+                <!-- SALON PRIVADO -->
+                <div class="catering-card">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23F0E68C' width='400' height='300'/%3E%3Crect x='50' y='60' width='300' height='180' fill='%23FFFACD' stroke='%238B4513' stroke-width='2'/%3E%3Crect x='70' y='80' width='260' height='140' fill='%23FFE4B5'/%3E%3Crect x='90' y='100' width='80' height='40' fill='%23D2B48C' stroke='%23654321' stroke-width='1'/%3E%3Crect x='230' y='100' width='80' height='40' fill='%23D2B48C' stroke='%23654321' stroke-width='1'/%3E%3C/svg%3E" alt="Salón Privado" class="catering-img">
+                    <h4>Salón Privado</h4>
+                    <p>Salón exclusivo y cómodo, perfecto para reuniones privadas, celebraciones íntimas y eventos empresariales.</p>
+                    <p class="capacity"><strong>Capacidad:</strong> Hasta 50 comensales</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION NOSOTROS / CHEF -->
+    <section class="about-section" id="nosotros">
+        <div class="container">
+            <h2 class="section-title">Nuestro Equipo</h2>
+            
+            <div class="chef-profile">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'%3E%3Ccircle cx='150' cy='80' r='50' fill='%23F4A460'/%3E%3Crect x='80' y='140' width='140' height='180' fill='%23FFFFFF' stroke='%23333' stroke-width='2'/%3E%3Ccircle cx='120' cy='160' r='15' fill='%23333'/%3E%3Ccircle cx='180' cy='160' r='15' fill='%23333'/%3E%3Cpath d='M120 200 Q150 220 180 200' stroke='%23333' stroke-width='2' fill='none'/%3E%3Crect x='100' y='250' width='25' height='70' fill='%23F4A460'/%3E%3Crect x='175' y='250' width='25' height='70' fill='%23F4A460'/%3E%3Crect x='100' y='320' width='25' height='15' fill='%23333'/%3E%3Crect x='175' y='320' width='25' height='15' fill='%23333'/%3E%3C/svg%3E" alt="Chef Gabriel" class="chef-photo">
+                <div class="chef-info">
+                    <h3>Chef Gabriel</h3>
+                    <p class="chef-specialty">Especialista en Carnes</p>
+                    <p class="chef-description">
+                        Con más de 15 años de experiencia en la cocina, el Chef Gabriel es experto en la preparación de carnes. 
+                        Su pasión por la cocina tradicional chilena y su dedicación a los productos frescos de calidad hacen que cada 
+                        plato sea una experiencia memorable. Sus recetas caseras han sido transmitidas de generación en generación, 
+                        manteniendo el auténtico sabor de la cocina criolla.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION SOLICITAR CARTA -->
+    <section class="cart-section" id="solicitar-carta">
+        <div class="container">
+            <h2 class="section-title">Solicitar Carta Digital</h2>
+            <form class="cart-form" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required placeholder="Tu correo">
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" required placeholder="+569 XXXXXXXX">
+                </div>
+                
+                <div class="form-group">
+                    <label for="tipo">Tipo de Solicitud:</label>
+                    <select id="tipo" name="tipo" required>
+                        <option value="">Seleccionar...</option>
+                        <option value="carta">Carta Digital</option>
+                        <option value="reserva">Reserva</option>
+                        <option value="catering">Consulta de Catering</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos más sobre tu solicitud..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- INFO RESTAURANTE -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%238B4513'/%3E%3Cpath d='M50 20 L70 50 L50 80 L30 50 Z' fill='%23D2691E'/%3E%3Ccircle cx='50' cy='50' r='15' fill='%23FFFFFF'/%3E%3C/svg%3E" alt="BuenSabor" class="footer-logo-img">
+                        <h4>BuenSabor</h4>
+                    </div>
+                    <p class="footer-tagline">Cocina Casera Auténtica</p>
+                </div>
+
+                <!-- HORARIOS -->
+                <div class="footer-section">
+                    <h4>Horarios de Atención</h4>
+                    <p><i class="fas fa-clock"></i> Lunes a Domingo</p>
+                    <p>10:00 AM - 6:00 PM</p>
+                </div>
+
+                <!-- UBICACION Y CONTACTO -->
+                <div class="footer-section">
+                    <h4>Ubicación y Contacto</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Calle Principal 456, Santiago, Chile</p>
+                    <p><i class="fas fa-phone"></i> +569 87654321</p>
+                    <p><i class="fas fa-envelope"></i> RBuenSabor@gmail.com</p>
+                    <p><i class="fas fa-utensils"></i> Servicio de Catering Disponible</p>
+                </div>
+
+                <!-- REDES SOCIALES -->
+                <div class="footer-section">
+                    <h4>Síguenos en Redes Sociales</h4>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 BuenSabor - Todos los derechos reservados. Cocina Casera Auténtica.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
