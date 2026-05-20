@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Reserva o Catering - BuenSabor</title>
+    <link rel="stylesheet" href="solicitud-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container-solicitud">
+        <!-- HEADER -->
+        <div class="header-solicitud">
+            <h1>BuenSabor</h1>
+            <p>Solicitud de Reserva o Catering</p>
+        </div>
+
+        <!-- FORMULARIO -->
+        <div class="form-container">
+            <form id="solicitudForm">
+                <!-- SECCIÓN A: TIPO DE SOLICITUD Y DATOS DEL EVENTO -->
+                <div class="form-section seccion-a">
+                    <h2><i class="fas fa-calendar-alt"></i> Sección A: Tipo de Solicitud y Datos del Evento</h2>
+
+                    <!-- Radio buttons: Tipo de solicitud -->
+                    <fieldset class="form-group">
+                        <legend>Tipo de Solicitud <span class="required">*</span></legend>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="reservaMesa" name="tipoSolicitud" value="reserva" checked>
+                                <label for="reservaMesa">Reserva de mesa en el salón</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="cateringExterno" name="tipoSolicitud" value="catering">
+                                <label for="cateringExterno">Servicio de catering externo</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Fecha del evento -->
+                    <div class="form-group">
+                        <label for="fechaEvento">Fecha del evento o reserva <span class="required">*</span></label>
+                        <input type="date" id="fechaEvento" name="fechaEvento" required>
+                    </div>
+
+                    <!-- Hora de inicio -->
+                    <div class="form-group">
+                        <label for="horaInicio">Hora de inicio <span class="required">*</span></label>
+                        <input type="time" id="horaInicio" name="horaInicio" required>
+                    </div>
+
+                    <!-- Duración (solo catering) -->
+                    <div class="form-group campo-condicional" id="duracionGroup">
+                        <label for="duracion">Duración estimada del evento <span class="required">*</span></label>
+                        <select id="duracion" name="duracion">
+                            <option value="">Seleccionar...</option>
+                            <option value="1hora">1 hora</option>
+                            <option value="2horas">2 horas</option>
+                            <option value="3horas">3 horas</option>
+                            <option value="4horasomas">4 horas o más</option>
+                        </select>
+                    </div>
+
+                    <!-- Nombre/descripción del evento (solo catering) -->
+                    <div class="form-group campo-condicional" id="nombreEventoGroup">
+                        <label for="nombreEvento">Nombre o descripción del evento <span class="required">*</span></label>
+                        <input type="text" id="nombreEvento" name="nombreEvento" placeholder="Ej: Cumpleaños de 50, Reunión anual de empresa">
+                    </div>
+
+                    <!-- Tipo de evento (solo catering) -->
+                    <div class="form-group campo-condicional" id="tipoEventoGroup">
+                        <label for="tipoEvento">Tipo de evento <span class="required">*</span></label>
+                        <select id="tipoEvento" name="tipoEvento">
+                            <option value="">Seleccionar...</option>
+                            <option value="casamiento">Casamiento</option>
+                            <option value="cumpleanos">Cumpleaños</option>
+                            <option value="corporativo">Evento corporativo</option>
+                            <option value="desayuno">Desayuno o coffee break</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <!-- Otro tipo de evento (solo si selecciona "Otro") -->
+                    <div class="form-group campo-condicional" id="otroEventoGroup">
+                        <label for="otroEvento">Especifique el tipo de evento <span class="required">*</span></label>
+                        <input type="text" id="otroEvento" name="otroEvento" placeholder="Describa el tipo de evento">
+                    </div>
+
+                    <!-- Lugar del evento (solo catering) -->
+                    <div class="form-group campo-condicional" id="lugarEventoGroup">
+                        <label for="lugarEvento">Lugar del evento <span class="required">*</span></label>
+                        <input type="text" id="lugarEvento" name="lugarEvento" placeholder="Dirección donde se realizará el servicio">
+                    </div>
+                </div>
+
+                <!-- SECCIÓN B: DATOS DE LOS COMENSALES -->
+                <div class="form-section seccion-b">
+                    <h2><i class="fas fa-users"></i> Sección B: Datos de los Comensales</h2>
+
+                    <!-- Grid con cantidad de adultos y menores -->
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="cantidadAdultos">Cantidad de adultos <span class="required">*</span></label>
+                            <input type="number" id="cantidadAdultos" name="cantidadAdultos" min="1" max="200" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cantidadMenores">Cantidad de menores</label>
+                            <input type="number" id="cantidadMenores" name="cantidadMenores" min="0" max="50" value="0">
+                        </div>
+                    </div>
+
+                    <!-- Restricciones alimentarias -->
+                    <fieldset class="form-group">
+                        <legend>Restricciones alimentarias presentes</legend>
+                        <div class="restricciones-grid">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="vegetarianos" name="restricciones" value="vegetarianos">
+                                <label for="vegetarianos">Vegetarianos</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="veganos" name="restricciones" value="veganos">
+                                <label for="veganos">Veganos</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="sinTacc" name="restricciones" value="sinTacc">
+                                <label for="sinTacc">Sin TACC (celiacos)</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="sinLactosa" name="restricciones" value="sinLactosa">
+                                <label for="sinLactosa">Sin lactosa</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="frutosSecos" name="restricciones" value="frutosSecos">
+                                <label for="frutosSecos">Alergias a frutos secos</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="otras" name="restricciones" value="otras">
+                                <label for="otras">Otras</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Otras restricciones (solo si marca "Otras") -->
+                    <div class="form-group campo-condicional" id="otrasRestriccionesGroup">
+                        <label for="otrasRestricciones">Detalle otras restricciones (máx. 200 caracteres)</label>
+                        <textarea id="otrasRestricciones" name="otrasRestricciones" maxlength="200" placeholder="Describa las otras restricciones..."></textarea>
+                        <div class="char-count">Caracteres: <span id="otrasRestriccionesCount">0</span>/200</div>
+                    </div>
+
+                    <!-- Menú infantil -->
+                    <fieldset class="form-group">
+                        <legend>Menú infantil</legend>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="menuInfantil" name="menuInfantil">
+                            <label for="menuInfantil">El grupo necesita menú infantil</label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Cantidad de menús infantiles (condicional) -->
+                    <div class="form-group campo-condicional" id="cantidadMenuInfantilGroup">
+                        <label for="cantidadMenuInfantil">Cantidad de menús infantiles <span class="required">*</span></label>
+                        <input type="number" id="cantidadMenuInfantil" name="cantidadMenuInfantil" min="1" max="50">
+                    </div>
+                </div>
+
+                <!-- SECCIÓN C: DATOS DEL CLIENTE Y PREFERENCIAS -->
+                <div class="form-section seccion-c">
+                    <h2><i class="fas fa-user-tie"></i> Sección C: Datos del Cliente y Preferencias</h2>
+
+                    <!-- Nombre completo -->
+                    <div class="form-group">
+                        <label for="nombreCompleto">Nombre completo <span class="required">*</span></label>
+                        <input type="text" id="nombreCompleto" name="nombreCompleto" required placeholder="Tu nombre">
+                    </div>
+
+                    <!-- Grid con correos -->
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="correoElectronico">Correo electrónico <span class="required">*</span></label>
+                            <input type="email" id="correoElectronico" name="correoElectronico" required placeholder="tu@correo.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmarCorreo">Confirmar correo <span class="required">*</span></label>
+                            <input type="email" id="confirmarCorreo" name="confirmarCorreo" required placeholder="tu@correo.com">
+                        </div>
+                    </div>
+
+                    <!-- Teléfono -->
+                    <div class="form-group">
+                        <label for="telefonoContacto">Teléfono de contacto <span class="required">*</span></label>
+                        <input type="tel" id="telefonoContacto" name="telefonoContacto" required placeholder="+569 XXXXXXXX">
+                    </div>
+
+                    <!-- Tipo de menú -->
+                    <div class="form-group">
+                        <label for="tipoMenu">Tipo de menú preferido <span class="required">*</span></label>
+                        <select id="tipoMenu" name="tipoMenu" required>
+                            <option value="">Seleccionar...</option>
+                            <option value="degustacion">Menú degustación</option>
+                            <option value="clasico">Menú clásico</option>
+                            <option value="infantil">Menú infantil predominante</option>
+                            <option value="definir">A definir con el chef</option>
+                        </select>
+                    </div>
+
+                    <!-- Bebidas incluidas -->
+                    <fieldset class="form-group">
+                        <legend>Bebidas incluidas (mínimo una) <span class="required">*</span></legend>
+                        <div class="bebidas-grid">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="agua" name="bebidas" value="agua">
+                                <label for="agua">Agua</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="gaseosas" name="bebidas" value="gaseosas">
+                                <label for="gaseosas">Gaseosas</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="vinos" name="bebidas" value="vinos">
+                                <label for="vinos">Vinos</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="champagne" name="bebidas" value="champagne">
+                                <label for="champagne">Champagne</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="sinAlcohol" name="bebidas" value="sinAlcohol">
+                                <label for="sinAlcohol">Sin alcohol</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Servicio de mozos (solo catering) -->
+                    <fieldset class="form-group campo-condicional" id="servicioMozosGroup">
+                        <legend>Servicios adicionales</legend>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="servicioMozos" name="servicioMozos">
+                            <label for="servicioMozos">Necesita servicio de mozos</label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Mobiliario (solo catering) -->
+                    <fieldset class="form-group campo-condicional" id="mobiliarioGroup">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="mobiliario" name="mobiliario">
+                            <label for="mobiliario">Necesita mobiliario: mesas y sillas</label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Cómo nos conoció -->
+                    <div class="form-group">
+                        <label for="comoNosConocio">¿Cómo nos conoció? <span class="required">*</span></label>
+                        <select id="comoNosConocio" name="comoNosConocio" required>
+                            <option value="">Seleccionar...</option>
+                            <option value="redesSociales">Redes sociales</option>
+                            <option value="recomendacion">Recomendación</option>
+                            <option value="busquedaWeb">Búsqueda web</option>
+                            <option value="clienteAntes">Fui cliente antes</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN D: OBSERVACIONES Y CONFIRMACIÓN -->
+                <div class="form-section seccion-d">
+                    <h2><i class="fas fa-clipboard-check"></i> Sección D: Observaciones y Confirmación</h2>
+
+                    <!-- Observaciones -->
+                    <div class="form-group">
+                        <label for="observaciones">Observaciones o pedidos especiales (máx. 350 caracteres)</label>
+                        <textarea id="observaciones" name="observaciones" maxlength="350" placeholder="Cuéntanos cualquier solicitud especial..."></textarea>
+                        <div class="char-count">Caracteres: <span id="observacionesCount">0</span>/350</div>
+                    </div>
+
+                    <!-- Confirmaciones -->
+                    <fieldset class="form-group">
+                        <legend>Confirmaciones <span class="required">*</span></legend>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="contactoConfirmacion" name="contactoConfirmacion">
+                            <label for="contactoConfirmacion">Acepto que BuenSabor se contacte para confirmar disponibilidad</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="terminosCondiciones" name="terminosCondiciones">
+                            <label for="terminosCondiciones">Acepto los <a href="#terminos" class="terms-link" target="_blank">Términos y Condiciones</a> del servicio</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="politicaPrivacidad" name="politicaPrivacidad">
+                            <label for="politicaPrivacidad">Acepto la <a href="#privacidad" class="terms-link" target="_blank">Política de Privacidad</a></label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Botones de acción -->
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-submit">
+                            <i class="fas fa-paper-plane"></i> Enviar Solicitud
+                        </button>
+                        <button type="reset" class="btn btn-reset">
+                            <i class="fas fa-redo"></i> Limpiar
+                        </button>
+                        <a href="index.html" class="btn btn-volver">
+                            <i class="fas fa-home"></i> Volver al Inicio
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer-solicitud">
+            <p>&copy; 2026 BuenSabor - Todos los derechos reservados. | <strong>Teléfono:</strong> +569 87654321 | <strong>Email:</strong> RBuenSabor@gmail.com</p>
+        </div>
+    </div>
+
+    <script src="solicitud-script.js"></script>
+</body>
+</html>
